@@ -8,3 +8,4 @@ rembg
 reportlab
 gunicorn
 openpyxl
+onnxruntime-cpu
