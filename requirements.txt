@@ -1,0 +1,10 @@
+flask
+flask-cors
+numpy
+opencv-python
+pandas
+Pillow
+rembg
+reportlab
+gunicorn
+openpyxl
