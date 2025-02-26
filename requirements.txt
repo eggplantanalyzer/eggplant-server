@@ -8,4 +8,4 @@ rembg
 reportlab
 gunicorn
 openpyxl
-onnxruntime-cpu
+onnxruntime==1.15.1
