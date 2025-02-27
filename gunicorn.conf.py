@@ -15,7 +15,7 @@ timeout = 120
 # Logging
 accesslog = '-'
 errorlog = '-'
-loglevel = 'debug'  # Changed to debug for more information
+# loglevel = 'debug'  # Changed to debug for more information
 
 # Worker configuration
 worker_connections = 1000 
