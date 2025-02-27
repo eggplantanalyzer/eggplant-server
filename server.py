@@ -255,7 +255,6 @@ def serve_result(filename):
     return send_from_directory(app.config['RESULTS_FOLDER'], filename)
 
 if __name__ == '__main__':
-    # port = int(os.environ.get('PORT', 10000))
-    port=int(os.getenv('PORT'),10000)
-    host = os.getenv('HOST','0.0.0.0')
+    port = int(os.getenv('PORT', '10000'))
+    host = os.getenv('HOST', '0.0.0.0')
     app.run(host=host, port=port)
