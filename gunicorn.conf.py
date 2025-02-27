@@ -9,22 +9,26 @@ port = int(os.environ.get("PORT", 10000))
 bind = f"0.0.0.0:{port}"
 
 # Worker configuration
-workers = multiprocessing.cpu_count() * 2 + 1  # Dynamic based on CPU cores
-worker_class = 'sync'  # Best for CPU-intensive tasks
-timeout = 300  # 5 minutes, increased for multiple images
+workers = 2  # Reduced number of workers for stability
+worker_class = 'sync'
+timeout = 600  # Increased to 10 minutes
 worker_connections = 1000
 
-# Limit request size for file uploads (100MB)
+# Request settings
+max_requests = 100  # Reduced to prevent memory issues
+max_requests_jitter = 10
+keepalive = 2
+
+# Upload settings
 limit_request_line = 0
 limit_request_fields = 100
 limit_request_field_size = 0
-max_requests = 1000
-keepalive = 5
 
 # Logging
 accesslog = '-'
 errorlog = '-'
-loglevel = 'info'
+loglevel = 'debug'  # Changed to debug for more information
 
-# Worker configuration
-worker_connections = 1000 
+# Restart workers if memory grows
+max_worker_lifetime = 3600  # 1 hour
+graceful_timeout = 120 
